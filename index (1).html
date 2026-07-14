@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>DriveRadar — Voice Directions &amp; Live Radar</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <div id="panel">
+    <div id="panel-header">
+      <h1>DriveRadar</h1>
+      <button id="panel-toggle" aria-label="Collapse panel">–</button>
+    </div>
+
+    <div id="panel-body">
+      <div class="field-row">
+        <input id="start-input" type="text" placeholder="Start (blank = my location)">
+      </div>
+      <div class="field-row">
+        <input id="end-input" type="text" placeholder="Destination">
+        <button id="go-btn">Go</button>
+      </div>
+
+      <div class="toggle-row">
+        <label class="switch">
+          <input type="checkbox" id="radar-toggle" checked>
+          <span>Live radar</span>
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="voice-toggle" checked>
+          <span>Voice guidance</span>
+        </label>
+      </div>
+
+      <div id="status"></div>
+
+      <ol id="steps"></ol>
+
+      <div id="key-setup" class="hidden">
+        <p>Enter your free OpenRouteService API key to enable routing. Get one at
+          <a href="https://openrouteservice.org/dev/#/signup" target="_blank" rel="noopener">openrouteservice.org</a>
+          (free, no credit card).</p>
+        <input id="ors-key-input" type="text" placeholder="Paste API key here">
+        <button id="save-key-btn">Save key</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
